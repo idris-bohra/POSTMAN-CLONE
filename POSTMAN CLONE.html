@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="prism.js"></script>
+    <script src="POSTMAN CLONE.js"></script>
+    <title>POSTMAN CLONE</title>
+
+    <!-- Adding css here -->
+
+    <style>
+        #shut{
+            min-height: 200px;
+            max-height: 500px;
+        }
+
+        
+
+        #outer2
+        {
+            border: black solid 3px;
+            border-radius: 20px;
+            padding: 50px;
+            background-color: rgb(235,235,235);
+        }
+
+        h1
+        {
+            text-align: center;
+            color: rgb(235,235,235);
+            background-color: rgb(20,20,20);
+            margin-bottom: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- this is navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">POST MASTER</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">ABOUT US</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">CONTACT US</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+    
+
+
+    
+
+    <div class="container mb-3 mx-5 my-2 row" id="outer">
+
+        <div id="outer2" class="my-5"  >
+
+            <h1>WELCOME TO POSTMASTER</h1>
+
+            <label class="col-sm-9 col-form-label">
+                <h3>URL</h3>
+            </label>
+    
+            <div class="col">
+                <input type="text" class="form-control" id="url" placeholder="Enter URL here">
+            </div>
+    
+            <div class="withrequest my-5">
+    
+                <h3>REQUEST TYPE</h3>
+    
+                <div class="form-check">
+    
+    
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="get" value="get" checked>
+    
+                    <label class="form-check-label" for="GET">
+                        GET
+                    </label>
+    
+                </div>
+                <div class="form-check">
+    
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="post" value="post">
+                    <label class="form-check-label" for="POST">
+                        POST
+                    </label>
+    
+                </div>
+    
+            </div>
+    
+            <div class="withcontent my-3">
+    
+                <h3>CONTENT TYPE</h3>
+    
+                <div class="form-check">
+    
+    
+                    <input class="form-check-input" type="radio" name="exampleRadios1" onclick="radiojson()" id="radiojson"
+                        value="json" checked>
+    
+                    <label class="form-check-label" for="json">
+                        JSON
+                    </label>
+    
+                </div>
+    
+                <div class="form-check">
+    
+                    <input class="form-check-input" type="radio" name="exampleRadios1" onclick="radioparameter()"
+                        id="parameter" value="params">
+                    <label class="form-check-label" for="params">
+                        CUSTOM PARAMETER
+                    </label>
+    
+                </div>
+    
+            </div>
+    
+            <div id="parameterbox" class="my-4">
+    
+    
+                <div id="childnode0">
+                    <h5><b>PARAMETER </b></h5>
+    
+                    <input type="text" id="parameterkey0" class="col-4" placeholder="Enter parameter key">
+                    <input type="text" id="parametervalue0" class="col-4" placeholder="Enter parameter value">
+    
+                    <button id="addparameter" onclick="addparameter()" class="btn btn-primary">+</button>
+                </div>
+    
+    
+    
+            </div>
+    
+            <div id="jsonbox">
+    
+                <h5><b>Enter your Request json</b></h5>
+                <textarea class="form-control" id="jsonarea" rows="3"></textarea>
+            </div>
+    
+            <div class="buttonofsubmit form-group row my-3">
+                <div class="col-sm-10">
+                    <button id="submit" onclick="submitted()" class="btn btn-primary">Submit</button>
+                </div>
+    
+    
+            </div>
+        </div>
+
+        <div id="responsewala">
+
+            <h5><b>Your Response</b></h5>
+            <!-- <textarea class="form-control" id="response" rows="3"></textarea> -->
+            <pre class="language-javascript" id="shut">
+                <code id="response" class="language-javascript"></code>
+            </pre>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
